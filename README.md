@@ -205,25 +205,31 @@ Note: Several alerts came from real internet threat actors actively scanning the
 ## Screenshots
 
 ### Suricata Running and Generating Alerts
-![Suricata Status](images/Suricata_status.png)
+
+<img width="1904" height="1030" alt="Suricata status" src="https://github.com/user-attachments/assets/2b6c0b78-27a3-46d5-99de-ea3196d663b9" />
 
 ### Custom Rule SID 9000001 Firing in fast.log
-![Custom Rule Firing](images/suricata_log_showing_custom_rule_firing.png)
+
+<img width="1904" height="1030" alt="suricata log showing custom rule firing" src="https://github.com/user-attachments/assets/5abb13d1-9b2a-4a37-9a92-c1504cdf274a" />
 
 ### Attack Simulation from Kali Linux
-![Kali Attacks](images/Kali_attack_generation_of_suricata.png)
+
+<img width="1912" height="1048" alt="Kali attack generation of suricata" src="https://github.com/user-attachments/assets/0f4b8a8a-2559-4a85-9801-af04987f4069" />
 
 ### Suricata Alert Summary in Sentinel (KQL)
-![Alert Summary](images/suricata_logs_summary_.png)
+
+ <img width="1920" height="1080" alt="suricata logs summary " src="https://github.com/user-attachments/assets/508a421c-1aad-447f-9cf4-93fdac112875" />
 
 ### Analytics Rules with MITRE ATT&CK Mapping
-![Analytics Rules](images/created_Analytic_rules.png)
+
+<img width="1920" height="1080" alt="created Analytic rules" src="https://github.com/user-attachments/assets/08a18ac7-16ad-40c7-bb7a-0dcdd1d097c0" />
 
 ### Incidents Generated in Sentinel
-![Incidents](images/incident_fired_based_on_rules.png)
+
+<img width="1920" height="1080" alt="incident fired based on rules" src="https://github.com/user-attachments/assets/8c24ff29-16e8-49ec-bfe6-3479dabf1a97" />
 
 ### Investigation Graph - Entity Mapping
-![Investigation Graph](images/investigation_mapping.png)
+<img width="1920" height="1080" alt="investigation mapping" src="https://github.com/user-attachments/assets/afb106ae-8f2f-48d0-8a47-d0e6c59560f2" />
 
 ---
 
@@ -248,9 +254,3 @@ Real internet threat actors were hitting the VM within minutes of it going publi
 Suricata 7.0.3, Microsoft Sentinel, Azure Monitor Agent, Log Analytics Workspace, KQL, Kali Linux, Nmap 7.98, Hydra 9.6, nginx, Azure NSG, Emerging Threats free ruleset, syslog facility local5
 
 ---
-
-## Related Labs
-
-- [Wazuh + VirusTotal Automated Threat Detection](https://github.com/rohithbaggu56-dot)
-- [Sysmon + Wazuh MITRE ATT&CK Detection](https://github.com/rohithbaggu56-dot)
-- [pfSense Firewall Lab](https://github.com/rohithbaggu56-dot)
