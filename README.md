@@ -201,6 +201,42 @@ Note: Several alerts came from real internet threat actors actively scanning the
 | T1083 | File and Directory Discovery | /etc/passwd URI access |
 
 ---
+---
+
+## 🔎 Incident Investigation Walkthrough
+
+Let's take one of the 29 SSH Scan alerts and walk through how you'd triage it in a real SOC.
+
+**Alert Fires:** ET SCAN Potential SSH Scan (SID 2000220)
+
+**Step 1 – What was it? (10 seconds)**
+- Source IP: 4.240.91.2 (the Azure VM's public IP — wait, that's backwards)
+- Actually: Attacker IP 192.168.1.101 (Kali), scanning 4.240.91.2
+- Alert indicates: TCP traffic on port 22 with multiple connection attempts
+- MITRE: T1595 Active Scanning
+
+**Step 2 – Is it real or false positive? (30 seconds)**
+- Check context: Was port 22 legitimately accessed in the last hour? 
+- Check: Did this IP also trigger SSH authentication failures (Event 4625)?
+- In this case: YES — 29 SSH Scan alerts + multiple 4625 failures from same IP = confirmed attack, not scanner noise
+
+**Step 3 – What's the scope? (1 minute)**
+- How many IPs did the same thing?
+- Query: `Syslog | where ProcessName == "suricata" | where SyslogMessage contains "SSH" | summarize count() by SrcIP`
+- Answer: 10+ IPs with similar patterns
+- Threat level: Medium (distributed scanning), not High (no credentials compromised yet)
+
+**Step 4 – What's your action? (30 seconds)**
+- Block the IPs at perimeter (NSG rule or firewall)
+- If authentication succeeded: Reset affected accounts, check for lateral movement
+- In this lab: No successful logins, so block and monitor
+
+**Step 5 – Close or Escalate?**
+- Severity: Medium (scanning + failed auth, no breach)
+- Status: Closed – Benign Positive (expected for exposed honeypot)
+- If this was production: Escalate to network team for blocking
+
+---
 
 ## Screenshots
 
