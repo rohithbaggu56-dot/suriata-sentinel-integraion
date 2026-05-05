@@ -201,7 +201,6 @@ Note: Several alerts came from real internet threat actors actively scanning the
 | T1083 | File and Directory Discovery | /etc/passwd URI access |
 
 ---
----
 
 ## 🔎 Incident Investigation Walkthrough
 
@@ -235,6 +234,18 @@ Let's take one of the 29 SSH Scan alerts and walk through how you'd triage it in
 - Severity: Medium (scanning + failed auth, no breach)
 - Status: Closed – Benign Positive (expected for exposed honeypot)
 - If this was production: Escalate to network team for blocking
+
+---
+
+## 🛡️ SOC Perspective (What Would Be Done in Real Environment)
+
+- Identified scanning behavior and brute force attempts
+- Correlated alerts with MITRE ATT&CK techniques (T1110, T1190)
+- Determined no successful compromise occurred
+- Recommended blocking attacker IPs at NSG/firewall level
+- Suggested enabling account lockout policies and restricting exposed services
+
+This lab simulates how raw alerts are converted into actionable SOC investigations.
 
 ---
 
