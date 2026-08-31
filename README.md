@@ -1,4 +1,4 @@
-# Suricata IDS/IPS + Microsoft Sentinel Integration Lab
+# 🛡️ Suricata IDS/IPS + Microsoft Sentinel Integration Lab
 
 **Platform:** Microsoft Azure | **Tools:** Suricata, Microsoft Sentinel, Kali Linux, Nmap, Hydra, KQL
 
